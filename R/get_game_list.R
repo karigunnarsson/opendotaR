@@ -48,8 +48,6 @@ get_game_list <- function(num_matches,
   game_list_df <- game_list$rows
   game_list_df <- dplyr::arrange(game_list_df, match_id)
 
-  # Extract unique match ID's and output it
-  output_vec <- unique(game_list_df$match_id)
-
-  return(output_vec)
+  # Output the DF
+  return(game_list_df)
 }
