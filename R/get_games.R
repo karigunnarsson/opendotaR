@@ -24,17 +24,18 @@
 get_games <- function(game_vec,
                       wait_time = 1.00,
                       output = "all") {
-  source("R/api_delay.R")
   # Check that input is of correct format
   if (!(is.vector(game_vec) & is.numeric(game_vec))) {
     stop("game_vec input must be a numeric vector containing match IDs")
   }
 
-  # Check if output != "all", that it does point to an actual file.
-  if (!file.exists(output)) {
-    stop(paste("Output must either be 'all' or a file, file '",
-               output,
-               "' does not exist.", sep =""))
+  if (output != "all") {
+    # Check if output != "all", that it does point to an actual file.
+    if (!file.exists(output)) {
+      stop(paste("Output must either be 'all' or a file, file '",
+                 output,
+                 "' does not exist.", sep =""))
+    }
   }
 
   # Make sure the match ID's are unique to avoid double work
