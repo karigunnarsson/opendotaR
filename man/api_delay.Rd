@@ -2,8 +2,7 @@
 % Please edit documentation in R/api_delay.R
 \name{api_delay}
 \alias{api_delay}
-\title{Function that controls the delay between API calls to opendota, user can specify the wait_time, but opendota asks
-you to limit yourself to 1 call per second}
+\title{API Delay function}
 \usage{
 api_delay(start_time, wait_time = 1)
 }
@@ -13,11 +12,12 @@ api_delay(start_time, wait_time = 1)
 \item{wait_time}{Desired wait time between API calls}
 }
 \value{
-There is no return, it simply sleeps the system for whatever time needed to reach wait_time
+There is no return, it simply sleeps the system for whatever time needed to
+    reach wait_time
 }
 \description{
-Function that controls the delay between API calls to opendota, user can specify the wait_time, but opendota asks
-you to limit yourself to 1 call per second
+Function that controls the delay between API calls to opendota, user can specify
+the wait_time, but opendota asks you to limit yourself to 1 call per second
 }
 \examples{
 \dontrun{

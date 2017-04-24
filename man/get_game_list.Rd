@@ -2,9 +2,7 @@
 % Please edit documentation in R/get_game_list.R
 \name{get_game_list}
 \alias{get_game_list}
-\title{Create an SQL query to opendotas API and extracts a list of games from the public_matches table. This is only a
-sample of matches, not all are included here. Returns a vector of match ID's ready for use in the get_games()
-function.}
+\title{Get list of games / Match ID's}
 \usage{
 get_game_list(num_matches, from_time, to_time, min_mmr = 1,
   min_duration = 1200, num_open_profile = 0)
@@ -20,19 +18,22 @@ get_game_list(num_matches, from_time, to_time, min_mmr = 1,
 
 \item{min_duration}{Minium match duration in seconds, defaulted to 1200 (20 minutes)}
 
-\item{num_open_profile}{Minium number of open profiles in the game. Higher number here gives higher % of games that
-are actually parsed.}
+\item{num_open_profile}{Minium number of open profiles in the game. Higher number here gives
+higher percentage of games that are actually parsed.}
 }
 \value{
 Returns data frame of results fulfilling the parameters input.
 }
 \description{
-Create an SQL query to opendotas API and extracts a list of games from the public_matches table. This is only a
-sample of matches, not all are included here. Returns a vector of match ID's ready for use in the get_games()
-function.
+Create an SQL query to opendotas API and extracts a list of games from the
+public_matches table. This is only a sample of matches, not all are included here. Returns a
+vector of match ID's ready for use in the get_games() function.
 }
 \examples{
 \dontrun{
-match_ids <- get_game_list(num_matches = 100, from_time = "20170101" ,to_time = "20170423", min_mmr = 4000)
+match_ids <- get_game_list(num_matches = 100,
+from_time = "20170101" ,
+to_time = "20170423",
+min_mmr = 4000)
 }
 }

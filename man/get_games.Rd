@@ -2,30 +2,33 @@
 % Please edit documentation in R/get_games.R
 \name{get_games}
 \alias{get_games}
-\title{Takes a vector of numerical value match ID's of dota2 replays, and attempts to fetch them from the opendota API
-only parsed matches are output.}
+\title{Fetch the games from the opendota API.}
 \usage{
 get_games(game_vec, wait_time = 1, output = "all")
 }
 \arguments{
 \item{game_vec}{Numeric vector of match ID's}
 
-\item{wait_time}{how long to wait (in seconds) between each API call, default is 1 sec (opendota asks you not to
-send more than 1 call per second)}
+\item{wait_time}{how long to wait (in seconds) between each API call, default is 1 sec (opendota
+asks you not to send more than 1 call per second)}
 
-\item{output}{Currently only takes "all" which means it takes the full JSON as output, future implementations
-wil include ways to trim the JSOn output before output.}
+\item{output}{Defaulted to "all", which will extract entire JSON, if not all, it should have the
+path to an R file that will be sourced and create some output, not the R file must also
+output to output_list()}
 }
 \value{
 Returns a list of objects, if output == "all" it's a list of JSON outputs.
 }
 \description{
-Takes a vector of numerical value match ID's of dota2 replays, and attempts to fetch them from the opendota API
-only parsed matches are output.
+Takes a vector of numerical value match ID's of dota2 replays, and attempts to
+fetch them from the opendota API only parsed matches are output.
 }
 \examples{
 \dontrun{
-match_ids <- get_game_list(num_matches = 100, from_time = "20170101" ,to_time = "20170423", min_mmr = 4000)
+match_ids <- get_game_list(num_matches = 100,
+from_time = "20170101",
+to_time = "20170423",
+min_mmr = 4000)
 get_games(match_ids)
 }
 }

@@ -1,18 +1,24 @@
-#' Takes a vector of numerical value match ID's of dota2 replays, and attempts to fetch them from the opendota API
-#' only parsed matches are output.
+#' Fetch the games from the opendota API.
+#'
+#' @description Takes a vector of numerical value match ID's of dota2 replays, and attempts to
+#' fetch them from the opendota API only parsed matches are output.
 #'
 #' @param game_vec Numeric vector of match ID's
-#' @param wait_time how long to wait (in seconds) between each API call, default is 1 sec (opendota asks you not to
-#'     send more than 1 call per second)
-#' @param output Defaulted to "all", which will extract entire JSON, if not all, it should have the path to an R file
-#'     that will be sourced and create some output, not the R file must also output to output_list()
+#' @param wait_time how long to wait (in seconds) between each API call, default is 1 sec (opendota
+#'     asks you not to send more than 1 call per second)
+#' @param output Defaulted to "all", which will extract entire JSON, if not all, it should have the
+#'     path to an R file that will be sourced and create some output, not the R file must also
+#'     output to output_list()
 #'
 #' @return Returns a list of objects, if output == "all" it's a list of JSON outputs.
 #' @export
 #'
 #' @examples
 #' \dontrun{
-#' match_ids <- get_game_list(num_matches = 100, from_time = "20170101" ,to_time = "20170423", min_mmr = 4000)
+#' match_ids <- get_game_list(num_matches = 100,
+#' from_time = "20170101",
+#' to_time = "20170423",
+#' min_mmr = 4000)
 #' get_games(match_ids)
 #' }
 get_games <- function(game_vec,
@@ -72,8 +78,8 @@ get_games <- function(game_vec,
     if (output == "all") {
       output_list[[parsed_count]] <- read_json
     } else {
-      # If output is not all, it's a file to be sourced and run, the sourced file (should) subset the data, only fetch
-      # what the user wants, and output it to the output_list.
+      # If output is not all, it's a file to be sourced and run, the sourced file (should) subset
+      # the data, only fetch what the user wants, and output it to the output_list.
       source(output, local = TRUE)
     }
 
