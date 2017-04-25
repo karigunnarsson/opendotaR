@@ -105,5 +105,6 @@ the tarball on my website, [you can download it here](http://www.karigunnarsson.
 
 ## Issues?
 
-I just made the package for myself, but if you run into any issues or have ideas for further features
-the package should have, feel free to drop me a line at kari.gunnarsson@outlook.com
+I mostly made the package for myself so i don't expect many to use it, but if do, and you run into 
+any issues or have ideas for further features the package should have, feel free to drop me a line 
+at kari.gunnarsson@outlook.com or open an issue here on github.
