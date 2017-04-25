@@ -2,7 +2,8 @@
 
 Package to simplify using opendota.com's API, get game lists, and download JSON's of parsed replays 
 from the opendota API. Also has functionality to execute own code to extract the specific parts of 
-the JSON file.
+the JSON file. This has no direct relation to opendota.com, i'm just a guy that likes playing with
+their data and needed a neat wrapper to fetch it more efficiently :)
 
 ## How to use the package
 
