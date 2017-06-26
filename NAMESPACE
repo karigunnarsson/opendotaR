@@ -3,3 +3,4 @@
 export(api_delay)
 export(get_game_list)
 export(get_games)
+export(get_latest_games)

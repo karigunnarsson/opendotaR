@@ -4,7 +4,7 @@
 \alias{get_games}
 \title{Fetch the games from the opendota API.}
 \usage{
-get_games(game_vec, wait_time = 1, output = "all")
+get_games(game_vec, wait_time = 1, output = "all", verbose = TRUE)
 }
 \arguments{
 \item{game_vec}{Numeric vector of match ID's}
@@ -15,6 +15,8 @@ asks you not to send more than 1 call per second)}
 \item{output}{Defaulted to "all", which will extract entire JSON, if not all, it should have the
 path to an R file that will be sourced and create some output, not the R file must also
 output to output_list()}
+
+\item{verbose}{Give live information on status of parsing, if FALSE no text is output to console.}
 }
 \value{
 Returns a list of objects, if output == "all" it's a list of JSON outputs.

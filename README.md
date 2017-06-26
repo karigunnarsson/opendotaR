@@ -98,11 +98,38 @@ parsed_games <- get_games(match_id_vec, output = "test.R")
 Note the output here will be a list of multiple data frames, to get it as one large dataframe simply
 use rbindlist(parsed_games).
 
+### Get only the latest games
+Using the get_game_list() you can specify specific times, minimum MMR and some other criteria to get
+a more specific list of games, but this will leave you with a list where only 5-10% of your games 
+are parsed, so that´s a lot of wasted API calls, if you're lucky 1 in 10 will give you a parsed games,
+and with the delay of 1 second, you get one game every second.
+
+So if you are OK with only getting the latest games, no filtering on MMR or when the game was played,
+you can use the get_latest_games() function, which guarantees a 100% hitrate, giving you a dataset to
+work with a lot faster than the get_game_list() and get_games() combo.
+
+It works very simply, it queries https://api.opendota.com/api/status which gives the 10 latest added
+games, and parses those. Within the function it still uses get_games() so you can still use the 
+output variable to specify an R file that prunes the JSON and only outputs what you're interested in.
+
+This would give you the full JSON output for the past 100 games
+```R
+parsed_games <- get_latest_games(100)
+```
+
+While this would give you the latest 100 games, but only outputting whatever test.R specifies (see
+code example above where we output heroID and number of wards bought).
+```R
+parsed_games <- get_latest_games(100, output = "test.R")
+```
+Many thanks to [Howard Chung](https://github.com/howardchung) (one of main contributes to the opendota project) for pointing out the 
+API status call and that it might be helpful for this package.
+
 ## Installation
 
 The package is not on CRAN, i might try that later, not entirely convinced they'd be thrilled
 with the way i wrote the package (source'ing a local R file in the package), so for now i just store
-the tarball on my website, [you can download it here](http://www.karigunnarsson.com/wp-content/uploads/2017/04/opendotaR_0.1.2.tar.gz) and manually install it to R if you are interested.
+the tarball on my website, [you can download it here](https://www.karigunnarsson.com/wp-content/uploads/2017/06/opendotaR_0.1.3.tar.gz) and manually install it to R if you are interested.
 
 ## Issues?
 

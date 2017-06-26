@@ -1,7 +1,7 @@
 Package: opendotaR
 Type: Package
 Title: R Interface for Opendota.coms API
-Version: 0.1.2
+Version: 0.1.3
 Author: Kári Gunnarsson
 Maintainer: Kári Gunnarsson <kari.gunnarsson@outlook.com>
 Description: Package to simplify using opendota.com's API, get game lists, and download JSON's of parsed replays from
