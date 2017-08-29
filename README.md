@@ -124,15 +124,3 @@ parsed_games <- get_latest_games(100, output = "test.R")
 ```
 Many thanks to [Howard Chung](https://github.com/howardchung) (one of main contributes to the opendota project) for pointing out the 
 API status call and that it might be helpful for this package.
-
-## Installation
-
-The package is not on CRAN, i might try that later, not entirely convinced they'd be thrilled
-with the way i wrote the package (source'ing a local R file in the package), so for now i just store
-the tarball on my website, [you can download it here](https://www.karigunnarsson.com/wp-content/uploads/2017/06/opendotaR_0.1.3.tar.gz) and manually install it to R if you are interested.
-
-## Issues?
-
-I mostly made the package for myself so i don't expect many to use it, but if do, and you run into 
-any issues or have ideas for further features the package should have, feel free to drop me a line 
-at kari.gunnarsson@outlook.com or open an issue here on github.
