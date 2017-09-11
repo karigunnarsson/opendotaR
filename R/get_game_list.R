@@ -53,7 +53,6 @@ get_game_list <- function(num_matches,
 
   # Extract the relevant table and convert to dataframe
   game_list_df <- game_list$rows
-  game_list_df <- dplyr::arrange(game_list_df, match_id)
 
   # Output the DF
   return(game_list_df)

@@ -16,6 +16,9 @@
 #' @export
 #'
 #' @examples
+#' \dontrun{
+#' parsed_games <- get_latest_games(100)
+#' }
 get_latest_games <- function(num_games,
                              min_duration = 1200,
                              wait_time = 1.00,

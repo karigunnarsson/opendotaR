@@ -29,3 +29,8 @@ dates or MMR your data is, but want fast data. The latest games will always have
 opposed to the general game list gotten from get_game_list(), wich only contains 5 - 10% parsed
 games.
 }
+\examples{
+\dontrun{
+parsed_games <- get_latest_games(100)
+}
+}
