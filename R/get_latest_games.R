@@ -33,7 +33,7 @@ get_latest_games <- function(num_games,
 
     # Use api status to obtain the 10 latest games parsed.
     api_status <- jsonlite::fromJSON("https://api.opendota.com/api/status")
-    game_list <- api_status$last_parsed$match_id
+    game_list <- subset(api_status$last_parsed, duration > min_duration)$match_id
 
     # Remove all previously parsed games (there can be duplicates if it's a slow day)
     game_list <- game_list[!(game_list %in% match_id_list)]
