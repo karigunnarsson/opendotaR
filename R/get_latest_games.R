@@ -28,6 +28,11 @@ get_latest_games <- function(num_games,
   match_id_list <- c()
   all_parsed_games <- list()
 
+  # Check min_duration is not too high, otherwise you risk waiting forever for games
+  if (min_duration > 80 * 60) {
+    cat(\r Warning: minimum duration is more than 80 minutes, it might take a while to obtain valid games)
+  }
+
   # Run while loop for as long as needed to obtain number of matches required
   while(matches_parsed <= num_games) {
 
